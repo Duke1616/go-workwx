@@ -57,10 +57,10 @@ func (x respUserDetail) intoUserInfo() (UserInfo, error) {
 		return UserInfo{}, err
 	}
 
-	gender, err := userGenderFromGenderStr(x.Gender)
-	if err != nil {
-		return UserInfo{}, err
-	}
+	gender, _ := userGenderFromGenderStr(x.Gender)
+	//if err != nil {
+	//	return UserInfo{}, err
+	//}
 
 	return UserInfo{
 		UserID:      x.UserID,
